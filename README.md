@@ -39,6 +39,8 @@ A webhook-driven deduplication sentinel for HubSpot, built on n8n. It catches co
 
 ## Architecture
 
+![Architecture](assets/architecture-diagram.png)
+
 ```mermaid
 flowchart LR
     A[HubSpot Webhook<br/>contact.creation / propertyChange] --> B[Verify Signature<br/>& Parse Events]
