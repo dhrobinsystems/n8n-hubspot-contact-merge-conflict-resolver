@@ -1,0 +1,45 @@
+{
+  "name": "n8n-hubspot-contact-merge-conflict-resolver",
+  "version": "1.0.0",
+  "description": "Webhook-driven HubSpot contact deduplication for n8n. Scores completeness and recency, applies strict precedence rules, backfills, merges and verifies the result.",
+  "private": true,
+  "license": "MIT",
+  "author": "DH Robin (dhRobin Systems)",
+  "main": "src/conflict-resolver.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "build:workflow": "node scripts/build-workflow.js",
+    "check:workflow": "node scripts/build-workflow.js --check",
+    "send:test-webhook": "node scripts/send-test-webhook.js",
+    "verify": "npm run check:workflow && npm test"
+  },
+  "keywords": [
+    "n8n",
+    "hubspot",
+    "crm",
+    "deduplication",
+    "merge",
+    "revops",
+    "webhooks"
+  ],
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 90,
+        "lines": 90
+      }
+    }
+  }
+}
